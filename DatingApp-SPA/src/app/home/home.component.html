@@ -1,0 +1,14 @@
+<div class="welcome" fxLayout="column" fxLayout.gt-md="row" fxLayoutGap.gt-md="10px" fxLayoutAlign="center center">
+  <section  *ngIf="!registerMode" class="mat-typography">
+    <h1>Find your match</h1>
+    <p>Come on in to view your matches... All you need to do is sign up!</p>
+    <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center">
+        <button mat-raised-button color="primary" (click)="registerToggle()">Register</button>
+        <button mat-raised-button color="accent">Learn more</button>
+    </div>
+  </section>
+
+  <section *ngIf="registerMode">
+    <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register>
+  </section>
+</div>

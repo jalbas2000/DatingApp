@@ -1,0 +1,35 @@
+<mat-toolbar class="mat-elevation-z6" color="primary">
+  <div class="nav-brand"><a href="/">Dating App</a></div>
+  <div fxFlex fxLayout fxLayoutAlign="space-between">
+    <ul fxLayout class="navigation-items" fxLayoutGap="15px" fxHide.xs>
+      <li><a [style.font-size.px]="'16'" mat-button href="#">Matches</a></li>
+      <li><a [style.font-size.px]="'16'" mat-button href="#">Lists</a></li>
+      <li><a [style.font-size.px]="'16'" mat-button href="#">Messages</a></li>
+    </ul>
+  </div>
+  <form *ngIf="!loggedIn()" #loginForm="ngForm" (ngSubmit)="login()" class="form-inline" fxLayoutGap="10px">
+    <mat-form-field [style.font-size.px]="'16'" appearance="standard">
+      <mat-label>Username</mat-label>
+      <input matInput placeholder="Username" name="username" [(ngModel)]="model.username" required>
+    </mat-form-field>
+    <mat-form-field [style.font-size.px]="'16'" appearance="standard">
+      <mat-label>Password</mat-label>
+      <input type="password" matInput placeholder="Password" name="password" [(ngModel)]="model.password" required>
+    </mat-form-field>
+    <button [style.font-size.px]="'16'" [disabled]="!loginForm.valid" type="submit" mat-raised-button>Login</button>
+  </form>
+  <div *ngIf="loggedIn()" class="user-profile">
+    <button [style.font-size.px]="'16'" mat-button [matMenuTriggerFor]="profilemenu"><span>Welcome User</span><mat-icon>more_vert</mat-icon></button>
+    <mat-menu #profilemenu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>account_circle</mat-icon>
+        <span>Edit Profile</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button (click)="logout()" mat-menu-item>
+        <mat-icon>power_settings_new</mat-icon>
+        <span>Logout</span>
+      </button>
+    </mat-menu>
+  </div>
+</mat-toolbar>

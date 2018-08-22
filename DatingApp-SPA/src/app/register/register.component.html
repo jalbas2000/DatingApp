@@ -1,0 +1,19 @@
+<form class="register-form" #registerForm="ngForm" (submit)="register()">
+  <section fxLayout="column">
+    <h2 class="text-center" color="primary">Sign Up</h2>
+    <mat-divider></mat-divider>
+
+    <mat-form-field>
+      <input matInput placeholder="Username" name="username" [(ngModel)]="model.username" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input type="password" matInput placeholder="Password" name="password" [(ngModel)]="model.password" required>
+    </mat-form-field>
+
+    <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center">
+      <button type="submit" mat-raised-button color="primary">Register</button>
+      <button (click)="cancel()" mat-raised-button color="accent">Cancel</button>
+    </div>
+  </section>
+  </form>

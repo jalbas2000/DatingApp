@@ -1,0 +1,8 @@
+.text-center {
+  text-align: center
+}
+.register-form {
+  min-width: 250px;
+  max-width: 600px;
+  width: 100%;
+}
