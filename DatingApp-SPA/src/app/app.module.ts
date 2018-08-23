@@ -1,3 +1,4 @@
+import { AlertifyService } from './_services/alertify.service';
 import { AuthService } from './_services/auth.service';
 import { MaterialModule } from './material.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -29,7 +30,8 @@ import { ErrorInterceptorProvider } from './_services/error.interceptor';
    ],
    providers: [
      AuthService,
-     ErrorInterceptorProvider
+     ErrorInterceptorProvider,
+     AlertifyService
    ],
    bootstrap: [
       AppComponent
