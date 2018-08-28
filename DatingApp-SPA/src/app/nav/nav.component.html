@@ -1,11 +1,11 @@
 <mat-toolbar class="mat-elevation-z6" color="primary">
   <mat-toolbar-row>
-    <div class="nav-brand"><a href="/">Dating App</a></div>
+    <div class="nav-brand"><a [routerLink]="['/home']">Dating App</a></div>
     <div *ngIf="loggedIn()" fxFlex fxLayout fxLayoutAlign="space-between">
       <ul fxLayout class="navigation-items" fxLayoutGap="15px" fxHide.xs>
-        <li><a [style.font-size.px]="'16'" mat-button href="#">Matches</a></li>
-        <li><a [style.font-size.px]="'16'" mat-button href="#">Lists</a></li>
-        <li><a [style.font-size.px]="'16'" mat-button href="#">Messages</a></li>
+        <li><a [style.font-size.px]="'16'" mat-button [routerLink]="['/members']" routerLinkActive="active">Matches</a></li>
+        <li><a [style.font-size.px]="'16'" mat-button [routerLink]="['/lists']" routerLinkActive="active">Lists</a></li>
+        <li><a [style.font-size.px]="'16'" mat-button [routerLink]="['/messages']" routerLinkActive="active">Messages</a></li>
       </ul>
     </div>
     <span class="nav-menu-spacer"></span>
